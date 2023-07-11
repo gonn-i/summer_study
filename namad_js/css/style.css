@@ -1,3 +1,4 @@
+
 .hidden {
     display:none;
 }
@@ -6,7 +7,7 @@ body {
     position: relative;
     overflow: hidden;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 img {
@@ -25,11 +26,125 @@ img {
     z-index: 1;
 }
 
-#clock {
+#login-form {
     position: fixed;
-    margin-left: 40%;
-    margin-top: 20%;
-    font-weight: 900;
-    font-size: xxx-large;
+    top:44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+#login-form > input {
+    font-size: 15px;
+    color: #ffffff;
+    width: 300px;
+    border: none;
+    border-bottom: solid #ffffff 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+  }
+
+#login-form > button {
+    color: white;
+}
+
+#clock {
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    font-weight: 900;
+    font-size: xxx-large;
+    transform: translate(-50%, -50%);
+}
+
+#greeting {
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: normal;
+    position: fixed;
+    font-size: large;
+
+}
+
+#todo-form{
+    position: fixed;
+    left: 50%;
+    top: 57%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    color: white;
+}
+
+#todo-form > input {
+    font-size: 15px;
+    color: #ffffff;
+    width: 300px;
+    border: none;
+    border-bottom: solid #ffffff 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+  }
+
+input:focus { outline: none; }
+
+#todo-form > span {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;  
+    background-color: #ffffff;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+label {
+position: absolute;
+color: #ffffff;
+left: 50%;
+transform: translateX(-50%);
+font-size: 20px;
+bottom: 8px;
+transition: all .2s;
+}
+    
+input:focus ~ label, input:valid ~ label {
+font-size: 16px;
+bottom: 40px;
+color: #b3b3b3;
+font-weight: bold;
+}
+
+input:focus ~ span, input:valid ~ span {
+width: 100%;
+}
+
+#quote{
+    text-align: center;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 90%;
+    font-size: small;
+}
+
+#todo-list{
+    text-align: center;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 65%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}

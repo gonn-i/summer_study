@@ -1,5 +1,5 @@
 const images =[
-    "0.jpeg", "1.jpeg", "2.jpeg"
+    "0.jpg", "1.jpg", "2.jpg"
 ];
 
 const backGround = document.createElement("img");
