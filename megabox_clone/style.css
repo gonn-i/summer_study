@@ -1,0 +1,206 @@
+:root{
+    --nav-top-font: #888888;
+    --nav-icon:#444444;
+    --nav-bavkgound: #0000004D;
+    --main-white: #fff;
+}
+
+
+body, html {
+    width: 1470px;
+    font-size: 15px;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: NanumBarunGothic, Dotum,'돋움',sans-serif;
+    font-weight: 400;
+}
+
+#big_nav {
+    height: 91px;
+    width: 1470px;
+    background-color:rgba(0,0,0,.3);
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    position: absolute;
+    z-index: 100;
+}
+
+#top-nav, #bottom-nav{
+    margin: auto;
+    display: block;
+    width: 1100px;
+    position: relative;
+}
+#top-nav{
+    line-height: 15px
+}
+#top-left-nav, #top-right-nav{
+    position: absolute;
+    color:var(--nav-top-font);
+    font-size: .8667em;
+    top:15px;
+    line-height: 19.5px;
+}
+
+#top-left-nav{
+    left: 0;
+}
+
+#top-left-nav a {
+    margin: 0 20px 0 0;
+}
+
+#top-right-nav{
+    right:0
+}
+
+#top-right-nav a {
+    margin: 0 0 0 20px;
+}
+
+
+#left_icon > a:nth-child(1), #left_icon > a:nth-child(2),#right_icon > a:nth-child(1),#right_icon > a:nth-child(2) {
+    position: absolute;
+    top: 42px;
+    width: 36px;
+    height:36px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    
+    display: inline-block;
+    background-repeat: none;
+}
+#left_icon > a:nth-child(1){
+    background-image: url(./image/nav_icon1.png);
+    color: #666;
+    left:0;
+}
+
+#left_icon > a:nth-child(2){
+    background-image: url(./image/nav_icon2.png);
+    color: var(--nav-icon);
+    left: 40px;
+}
+
+#right_icon > a:nth-child(1){
+    background-image: url(./image/nav_icon3.png);
+    color: var(--nav-icon);
+    right:40px;
+}
+#right_icon > a:nth-child(2){
+    background-image: url(./image/nav_icon4.png);
+    color: var(--nav-icon);
+    right:0px;
+}
+
+
+#left_bottom_nav, #right_bottom_nav {
+    display: inline-block;
+    color: var(--main-white);
+    font-size: 1rem;;
+}
+
+#left_bottom_nav > span , #right_bottom_nav > span {
+    width: 30px;
+    height: 36px;
+    display: inline-block;
+    position: absolute;
+    background-repeat: no-repeat;
+    font-size: 0;
+    top: 52px;
+}
+#left_bottom_nav > span:nth-child(1){
+    background-image: url(./image/gnb-txt-movie-white.png);
+    left:166px;
+   
+}
+
+#left_bottom_nav > span:nth-child(2){
+    background-image: url(./image/gnb-txt-reserve-white.png);
+    left:256px;
+
+}
+#left_bottom_nav > span:nth-child(3){
+    background-image: url(./image/gnb-txt-theater-white.png);
+    left:345px;
+
+}
+#right_bottom_nav > span:nth-child(1){
+    background-image: url(./image/gnb-txt-event-white.png);
+    width: 45px;
+    right:347px;
+}
+
+#right_bottom_nav > span:nth-child(2){
+    background-image: url(./image/gnb-txt-store-white.png);
+    width: 44px;
+    right:241px;
+
+}
+#right_bottom_nav > span:nth-child(3){
+    background-image: url(./image/gnb-txt-benefit-white.png);
+    right:150px;
+    width: 29px;
+
+}
+
+#main_logo {
+    display: block;
+    width: 140px;
+    height: 47px;
+
+    margin: 5px 0 0 480px;
+    background-image: url(./image/main_logo.png);
+    background-repeat:no-repeat ;
+    position: absolute;
+}
+
+
+#rank_box {
+    height:921.4px;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#rank_box #background img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(15px);
+    overflow: hidden;
+    overflow-clip-margin: content-box;
+}
+
+#rank_box #background #bg_pattern {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url(../images/movie/bg-movie-detail-pattern.png);
+}
+
+#rank_box #background::before {
+    content:'';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(3,1,21,0.7);
+}
+
+#rank_box #background::after {
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(3,1,21,0.7);
+}
