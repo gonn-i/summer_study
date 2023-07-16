@@ -10,18 +10,34 @@
 </body>
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-<script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
     const root =document.getElementById("root");
 
-    const h3 = React.createElement("h3",
-    { onMouseEnter: () => console.log("mouse on!"), }
-    ,"Hello I'm a span");
+    //react js는 babel 을 이용함으로써 html 문법으로 작성가능 
+    // element를 추가할때는 함수화하기 -> 태그 + 속성 + 내용 + 태그 
+    //  직접 만든 컴포넌트를 랜더링하기 위해서는 항상 대문자로 작성해야함 (소문자로 작성하면 그냥 일반적인 html 태그로 인식하기 때문)
+   
+    // function Title() { 
+    // return (<h3 id="title" onMouseEnter={() => console.log("mouse on!")}> 
+    //     Hello l'm title! </h3>)};
 
-    const btn = React.createElement("button",
-    {onClick: () => console.log("l'm clicked!"),}
-    ,"click me!")
+    // const Btn = () => <button style= {{backgoroundColor: "blue"}} onClick={() => console.log("l'm clicked!")}> 
+    //     click me!</button>;
 
-    const container = React.createElement("div", null, [h3, btn]);
-    ReactDOM.render(container, root);
+    // // const btn = React.createElement("button",
+    // // {onClick: () => console.log("l'm clicked!"),}
+    // // ,"click me!")
+
+    // // const container = React.createElement("div", null, [title, btn]);
+    // //요소 안에 내가 만든 컴포넌트들 넣는 방법 (위의 방법과 같음)
+    // // 함수 만드는 방법 (1. function 붙여서 return/ 2. = () =>하기 )
+    // const Container = () =><div>
+    //     <Title/>
+    //     <Btn/>
+    //     </div>
+
+    //reactdom을 이용하면 랜더링을 통해 html로 사용자에게 보여짐
+    ReactDOM.render(<Container/>, root);
 </script>
 </html>
