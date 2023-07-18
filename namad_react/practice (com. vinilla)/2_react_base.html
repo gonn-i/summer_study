@@ -63,11 +63,18 @@
     //3.1 
     let counter =0;
     function App () {
-        const [counter, modifier] = React.useState(); //countUp을 대신 해주는 함수 [data, counter값 바꿔주는 함수]
+        //react의 큰 장점 : state가 변화하면 새로운 컴포넌트 값으로 리랜더링이 발생 !!!
+        let [counter, setCounter] = React.useState(0); //countUp을 대신 해주는 함수 [data, counter값 바꿔주는 함수]
+        const onClick = () => {
+            //state를 세팅하는 방법 1. 직접 변수 할당 / 2. 함수를 할당하는 방식 .. 함수의 첫번째 인자는 현재의 state
+
+            //setCounter(counter+1); 
+            setCounter((current) => current +1);
+        }
         return (                                       //배열의 요소를 각각 꺼내오는 방법 => const [요소1, 요소2, ..] = 배열 
             <div>
                 <h3>Total click: {counter}</h3>
-                <button>click me!</button>    
+                <button onClick={onClick}>click me!</button>    
             </div>
         );
     }
