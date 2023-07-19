@@ -8,12 +8,13 @@
 <body>
     <div id="root"></div>
 </body>
-<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js "></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const root = document.getElementById("root");
-    function Btn ({text, onClick}) {
+    function Btn ({text, onClick,fontSize}) {
         console.log(text,"was rendered")
         return <button 
         onClick={onClick}
@@ -22,9 +23,14 @@
             color: "white",
             padding: "10px 20px",
             border:0,
-            borderRadius:10
+            borderRadius:10,
+            fontSize:fontSize,
         }}> {text}</button>;
     } 
+    Btn.propTypes = {
+        text:PropTypes.string,
+        fontSize:PropTypes.number,
+    }
     function ConfirmBtn () {
         return <button >ConFirm</button>;
     }
@@ -39,7 +45,7 @@
         return (                                        
             <div>
                 <MemorizeBtn  text={value} onClick={ChangeValue}/>  
-                <MemorizeBtn text="continue"/>
+                <MemorizeBtn text={14} fontSize={"Continue"}/>
             </div>
             //prop(속성값)을 설정해주어 이를 함수에 인자로 넘겨줄 수 잇음
             //속성값으로 달아준 onClick은 이벤트 리스너가 아님
