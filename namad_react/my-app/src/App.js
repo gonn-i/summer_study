@@ -1,42 +1,23 @@
 import {useEffect, useState} from "react";
 
-function Hello () {
-  useEffect (()=> {
-    console.log("hi :)");
-    return ()=> {console.log("bye :(");}
-  }, []);
-  return <h1>Hello</h1>;
-}
-
 function App() {
-  const[counter,setCounter] = useState(0);
-  const [keyword, setKeyword] = useState("");
-  const [showing, setShowing] = useState(false);
-
-  const onClick = () => setCounter((prev) => prev +1);
-  const onChange = (event) => setKeyword(event.target.value);
-  const onDiff = () => setShowing((prev) => !prev); 
-  console.log("i run all the time");
-
-  useEffect( () => {
-    console.log("CALL THE API ...")
-  }, []);
-
-  useEffect( () => {
-    console.log("I riun when 'keybord & counter' changes");
-  }, [keyword,counter]);
-
+ const [toDo, setToDo] = useState("");
+ const [toDos, setToDos] = useState("");
+ const onChange = (event) => {setToDo(event.target.value);}
+const onSubmited = (event) => {
+     event.preventDefault()
+     if(toDo === "") return;
+     setToDo("");
+     setToDos((currentArray) => [toDo, ...currentArray])
+  }
+ 
   return (
     <div>
-      <input 
-        value={keyword} 
-        type="text" 
-        placeholder="Search here ..." 
-        onChange={onChange}/>
-      <h1>{counter}</h1>
-      <button onClick={onClick}>Click me!</button>
-      <button onClick={onDiff}>{showing? "Hide" : "Show"}</button>
-      {showing? <Hello/>: null}
+      <h1>My To Dos ({toDos.length})</h1>
+      <form onSubmit={onSubmited}>
+        <input value={toDo} onChange={onChange} type="text" placeholder="wrire your to do..."/>
+        <button>Add To Do</button>
+      </form>
     </div>
   
     );
